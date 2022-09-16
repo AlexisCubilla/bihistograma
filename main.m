@@ -1,20 +1,38 @@
-function img2 = main(img)
+function re = main(n)
 
-    s = size(img);
-    if( length(s) > 2 )
-        img = rgb2gray(img);
+    dir_rut='imagenes\8bit\';
+
+    tabla=zeros(2,3);
+
+    for i= 1:n
+
+        dir= strcat(dir_rut,num2str(i),'.png');
+        img=imread(dir);
+        
+        % algoritmo BHE2PL
+
+        tiempo_inicio = cputime;
+        [img2,ult] =  BHE2PL(img);
+        total = cputime - tiempo_inicio;
+        
+        amb=AMBE(img,img2);
+        psnr=PSNR(img,img2,ult);
+
+        tabla(1,:)=tabla(1,:)+[total,amb,psnr;
+
+        % algoritmo HE
+
+        tiempo_inicio = cputime;
+        img2=histeq(img);
+        total = cputime - tiempo_inicio;
+
+        amb=AMBE(img,img2);
+        psnr=PSNR(img,img2,ult);
+        
+        tabla(2,:)=tabla(2,:)+[total,amb,psnr];
+
     end
 
-    [img2,ult] =  BHE2PL(img);
-
-    figure;imshow(img);title('original');figure;imshow(img2);title('modificado');
-
-    amb= AMBE(img,img2); %diferencia de brillos
-
-    psnr= PSNR(img,img2,ult);
-
-    amb
-
-    psnr
+    re=tabla;
 
 end

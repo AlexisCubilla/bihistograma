@@ -1,6 +1,12 @@
 function [img2,ult] = BHE2PL(img)
 
     s = size(img);
+    
+    if( length(s) > 2 )
+        img = rgb2gray(img);
+        s = size(img);
+    end
+
 
     [count,label]=imhist(img);
     

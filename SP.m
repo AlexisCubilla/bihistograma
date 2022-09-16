@@ -5,7 +5,6 @@ function spr = SP(hi,pk_matriz)
     %   utiliza la funcion pk que retorna la matriz [label, probabilidadOcurrencia]
     %   spr, retorna la sumatoria de pk * k
     [x, y] = size(hi);
-    x
     spr = 0;
     for i = 1:x
         spr = spr + (pk_matriz(i, 2) * hi(i, 1));

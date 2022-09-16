@@ -1,8 +1,8 @@
-function re = main(n)
+function tab = main(n)
 
     dir_rut='imagenes\8bit\';
 
-    tabla=zeros(2,4);
+    tab=zeros(2,4);
 
     ult=255;
 
@@ -31,7 +31,7 @@ function re = main(n)
 
         % e=entropy(pk1);
 
-        tabla(1,:)=tabla(1,:)+[total/n,amb/n,psnr/n,c/n];
+        tab(1,:)=tab(1,:)+[total/n,amb/n,psnr/n,c/n];
 
         % algoritmo HE
 
@@ -53,11 +53,11 @@ function re = main(n)
 
         c=contrast(pk1,brillo);
         
-        tabla(2,:)=tabla(2,:)+[total/n,amb/n,psnr/n,c/n];
+        tab(2,:)=tab(2,:)+[total/n,amb/n,psnr/n,c/n];
 
     end
-    re=tabla;
-
+ 
     fprintf('      T(s)     AMBE     PSNR    Contraste\n');
-    re
+    tab
+    
 end

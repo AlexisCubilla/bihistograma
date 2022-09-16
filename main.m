@@ -18,7 +18,7 @@ function re = main(n)
         amb=AMBE(img,img2);
         psnr=PSNR(img,img2,ult);
 
-        tabla(1,:)=tabla(1,:)+[total,amb,psnr;
+        tabla(1,:)=tabla(1,:)+[total,amb,psnr];
 
         % algoritmo HE
 

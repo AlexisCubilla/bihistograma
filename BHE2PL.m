@@ -23,8 +23,6 @@ function main = main(img)
 
         pk=zeros(x,y);
 
-        count=0;
-
         for i=1:x
             pk(i,2)=hi(i,2)/total;
             pk(i,1)=hi(i,1);

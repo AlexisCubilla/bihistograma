@@ -57,7 +57,15 @@ function tab = main(n)
 
     end
  
-    fprintf('      T(s)     AMBE     PSNR    Contraste\n');
-    tab
+    fprintf('\t\t\tT(s)\t\tAMBE\t\t\tPSNR\t\tContraste\n');
+
+    fprintf('BHE2PL     %3f    %3f      %3f      %3f      %3f',tab(1,1),tab(1,2),tab(1,3),tab(1,4));
+
+    fprintf('\n');
     
+    fprintf('HE         %3f    %3f      %3f      %3f      %3f',tab(2,1),tab(2,2),tab(2,3),tab(2,4));
+
+    fprintf('\n');
+    % tab
+
 end

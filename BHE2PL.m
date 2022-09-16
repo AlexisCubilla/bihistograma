@@ -1,7 +1,7 @@
-function [img2,ult] = BHE2PL(img)
+function [img2] = BHE2PL(img)
 
     s = size(img);
-    
+
     if( length(s) > 2 )
         img = rgb2gray(img);
         s = size(img);
@@ -69,7 +69,5 @@ function [img2,ult] = BHE2PL(img)
     ec(eclx+1:end,:)=ec_u;
 
     img2=img_modif(img,ec);
-    
-    ult=h(end,1);
 
 end
